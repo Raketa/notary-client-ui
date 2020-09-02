@@ -33,7 +33,7 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col, UncontrolledCollapse
 } from "reactstrap";
 
 // core components
@@ -42,6 +42,18 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
+
+
+fetch('https://normapi.herokuapp.com/api/normalize', {
+  "method": "post",
+  "Content-Type": "application/json",
+  "body": JSON.stringify({
+    "string": 'TEST test TEST'
+  })})
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(e => console.log(e));
+
 
 class Landing extends React.Component {
   state = {};
@@ -58,7 +70,7 @@ class Landing extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default">
+              <div className="shape shape-style-1 landing-top-background">
                 <span />
                 <span />
                 <span />
@@ -73,14 +85,12 @@ class Landing extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">
-                        A beautiful Design System{" "}
-                        <span>completed with examples</span>
+                      <h1 className="display-3 text-black">
+                        Личный нотариус{" "}
+                        <span>онлайн 24/7</span>
                       </h1>
-                      <p className="lead text-white">
-                        The design system comes with four pre-built pages to
-                        help you get started faster. You can change the text and
-                        images and you're good to go.
+                      <p className="lead text-black">
+                        Услугу предоставляет сбербанк
                       </p>
                       <div className="btn-wrapper">
                         <Button
