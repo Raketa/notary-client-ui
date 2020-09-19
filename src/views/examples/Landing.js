@@ -39,6 +39,9 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import { Widget } from 'react-chat-widget';
+
+import 'react-chat-widget/lib/styles.css';
 
 // index page sections
 import Download from "../IndexSections/Download.js";
@@ -65,6 +68,8 @@ class Landing extends React.Component {
   render() {
     return (
       <>
+        {/*Инструкция по работе с сообщениями https://github.com/Wolox/react-chat-widget*/}
+        <Widget />
         <DemoNavbar />
         <main ref="main">
           <div className="position-relative">
