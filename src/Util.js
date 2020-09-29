@@ -6,14 +6,12 @@ function getAddress(path) {
 }
 
 
-function register() {
+function register(info) {
     fetch(getAddress('/api/register'), {
         method: 'POST',
-        body: JSON.stringify({
-            "username": "user",
-            "password": "user",
+        body: JSON.stringify(Object.assign({
             "role": "CLIENT"
-        })
+        }, info))
     })
         .then(data => data.json())
         .then(data => {

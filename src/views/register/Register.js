@@ -1,27 +1,9 @@
-/*!
 
-=========================================================
-* Argon Design System React - v1.1.0
-=========================================================
+import React, {} from "react";
 
-* Product Page: https://www.creative-tim.com/product/argon-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
-
-// reactstrap components
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
   FormGroup,
   Form,
@@ -37,13 +19,20 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
+import Util from '../../Util'
 
 class Register extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+    this.state = {};
   }
+
+  registerUser() {
+    Util.register(this.state);
+  }
+
   render() {
     return (
       <>
@@ -67,8 +56,8 @@ class Register extends React.Component {
 
                     <CardBody className="px-lg-5 py-lg-5">
 
-                      <Form role="form" innerRef={form} >
-                        <FormGroup>
+                      <Form role="form">
+                        <FormGroup onChange={(e) => this.setState({username: e.target.value})}>
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -78,7 +67,7 @@ class Register extends React.Component {
                             <Input placeholder="Имя пользователя" type="text" />
                           </InputGroup>
                         </FormGroup>
-                        <FormGroup>
+                        <FormGroup onChange={(e) => this.setState({lastname: e.target.value})}>
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -88,7 +77,7 @@ class Register extends React.Component {
                             <Input placeholder="Фамилия" type="text" />
                           </InputGroup>
                         </FormGroup>
-                        <FormGroup>
+                        <FormGroup onChange={(e) => this.setState({firstname: e.target.value})}>
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -98,7 +87,7 @@ class Register extends React.Component {
                             <Input placeholder="Имя" type="text" />
                           </InputGroup>
                         </FormGroup>
-                        <FormGroup>
+                        <FormGroup onChange={(e) => this.setState({patronymic: e.target.value})}>
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -108,7 +97,7 @@ class Register extends React.Component {
                             <Input placeholder="Отчество" type="text" />
                           </InputGroup>
                         </FormGroup>
-                        <FormGroup>
+                        <FormGroup onChange={(e) => this.setState({password: e.target.value})}>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -160,6 +149,7 @@ class Register extends React.Component {
                             className="mt-4"
                             color="primary"
                             type="button"
+                            onClick={() => this.registerUser()}
                           >
                             Создать аккаунт
                           </Button>
