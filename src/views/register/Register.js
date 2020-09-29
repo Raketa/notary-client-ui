@@ -162,7 +162,6 @@ class Register extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
       </>
     );
   }
