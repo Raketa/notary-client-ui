@@ -28,9 +28,11 @@ import Index from "views/Index.js";
 import Landing from "views/examples/Landing.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
-import Register from "views/examples/Register.js";
+import Register from "views/register/Register.js";
 
 import ChatComponent from "./views/chat/chat.js";
+
+let state = {}
 
 ReactDOM.render(
     <BrowserRouter>
@@ -50,12 +52,12 @@ ReactDOM.render(
             <Route
                 path="/register-page"
                 exact
-                render={props => <Register {...props} />}
+                render={props => <Register state={state} {...props} />}
             />
             <Route
                 path="/chat-page"
                 exact
-                render={props => <ChatComponent {...props} />}
+                render={props => <ChatComponent state={state} {...props} />}
             />
             <Redirect to="/"/>
         </Switch>

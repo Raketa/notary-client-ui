@@ -14,53 +14,13 @@ import {
 } from 'react-chat-elements';
 import 'react-chat-elements/dist/main.css';
 
-function register() {
-    fetch('https://notarius-api.herokuapp.com/api/register', {
-        method: 'POST',
-        body: JSON.stringify({
-            "username": "user",
-            "password": "user",
-            "role": "CLIENT"
-        })
-    })
-        .then(data => data.json())
-        .then(data => {
-            console.log(data);
-            auth();
-        })
-        .catch(data => {
-            console.log(data);
-        });
-}
+import Util from '../../Util'
 
-function auth() {
-    console.log(" before")
-    let formData = new FormData();
-    formData.append('username', 'user');
-    formData.append('password', 'user');
-
-    fetch('https://notarius-api.herokuapp.com/login', {
-        method: 'POST',
-        "Content-Type": "multipart/form-data;boundary='",
-        body: formData,
-        credentials: "include"
-    })
-        .then(data => data.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(data => {
-            console.log(data);
-        });
-    console.log(" after")
-
-}
-
-const ChatComponent = ({role, ...restProps}) => {
+const ChatComponent = ({role, state, ...restProps}) => {
 
 
     useEffect(() => {
-        auth();
+        Util.auth();
     })
 
 
