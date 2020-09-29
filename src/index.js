@@ -17,7 +17,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
 
 import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/vendor/font-awesome/css/font-awesome.min.css";
@@ -30,28 +30,35 @@ import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
 
+import ChatComponent from "./views/chat/chat.js";
+
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" exact render={props => <Index {...props} />} />
-      <Route
-        path="/landing-page"
-        exact
-        render={props => <Landing {...props} />}
-      />
-      <Route path="/login-page" exact render={props => <Login {...props} />} />
-      <Route
-        path="/profile-page"
-        exact
-        render={props => <Profile {...props} />}
-      />
-      <Route
-        path="/register-page"
-        exact
-        render={props => <Register {...props} />}
-      />
-      <Redirect to="/" />
-    </Switch>
-  </BrowserRouter>,
-  document.getElementById("root")
+    <BrowserRouter>
+        <Switch>
+            <Route path="/" exact render={props => <Index {...props} />}/>
+            <Route
+                path="/landing-page"
+                exact
+                render={props => <Landing {...props} />}
+            />
+            <Route path="/login-page" exact render={props => <Login {...props} />}/>
+            <Route
+                path="/profile-page"
+                exact
+                render={props => <Profile {...props} />}
+            />
+            <Route
+                path="/register-page"
+                exact
+                render={props => <Register {...props} />}
+            />
+            <Route
+                path="/chat-page"
+                exact
+                render={props => <ChatComponent {...props} />}
+            />
+            <Redirect to="/"/>
+        </Switch>
+    </BrowserRouter>,
+    document.getElementById("root")
 );

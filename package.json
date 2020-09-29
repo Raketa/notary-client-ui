@@ -54,6 +54,7 @@
     "node-sass": "4.13.1",
     "nouislider": "14.1.1",
     "react": "16.12.0",
+    "react-chat-elements": "^10.10.2",
     "react-chat-widget": "^3.0.5",
     "react-datetime": "^3.0.4",
     "react-dom": "16.12.0",
