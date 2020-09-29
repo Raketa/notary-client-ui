@@ -17,3 +17,9 @@
     color: black;
     font-size: larger;
 }
+
+.chat-scroll
+{
+    overflow-y: scroll;
+    max-height: 600px;
+}
