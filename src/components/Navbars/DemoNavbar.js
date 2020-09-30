@@ -89,7 +89,7 @@ class DemoNavbar extends React.Component {
           >
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
-                <div className="laning-sberbank-notary-maintext">Сбербанк нотариус</div>
+                <div className="laning-sberbank-notary-maintext">СБЕРнотариус</div>
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
